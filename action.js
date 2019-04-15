@@ -81,7 +81,7 @@ module.exports = function(rekitCore) {
 
     // Add to redux/sagas.js
     const sagasEntry = utils.mapFeatureFile(feature, 'redux/sagas.js');
-    refactor.addExportFrom(sagasEntry, `./${name}`, null, `watch${_.pascalCase(name)}`);
+    refactor.addImportFrom(sagasEntry, `./${name}`, null, `watch${_.pascalCase(name)}`);
 
     // Add saga test
     test.addAction(feature, name, {
